@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Agri-Bank Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 50px;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+        input {
+            margin: 10px;
+            padding: 8px;
+            width: 200px;
+        }
+        button {
+            padding: 10px 20px;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #218838;
+        }
+    </style>
+    <script>
+        function login(event) {
+            event.preventDefault();
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+            
+            if (username === "admin" && password === "supersecurepassword") {
+                alert("Login successful! Redirecting to admin panel.");
+                window.location.href = "admin.html";
+            } else if (username === "farmer1" && password === "farmerpass") {
+                alert("Welcome farmer1, your balance is 5000 INR.");
+            } else {
+                alert("Invalid credentials!");
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>Agri-Bank Portal</h2>
+        <form onsubmit="login(event)">
+            <label>Username:</label>
+            <input type="text" id="username" required>
+            <br>
+            <label>Password:</label>
+            <input type="password" id="password" required>
+            <br>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</body>
+</html>
